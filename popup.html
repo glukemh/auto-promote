@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Promote</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
+    <style>
+        html, body {
+            font-family: 'Open Sans', sans-serif;
+            width: 25rem;
+            margin: 0;
+        }
+
+        h1 {
+            font-family: 'Menlo', monospace;
+            font-size: 2.5rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .logo {
+            color: darkblue;
+        }
+
+        .logo img {
+            margin-right: 0.5em;
+        }
+
+        .flex-container {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .input {
+            margin: 0 1em;
+        }
+
+        .input-label {
+            padding: 0 0 1em 0;
+            font-size: 1.2rem;
+        }
+
+        .promote-indicator {
+            margin: 1rem auto;
+            font-size: 0.75rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo"><img src="images/icon_64.png" alt="Auto Promote" />Auto Promote</h1>
+    </div>    
+    <div class="flex-container">
+        <div class="input">
+            <label for="promote-input" class="input-label">Identify by: </label>
+            <input id="promote-input" type="text" />
+            <button class="save-button">Save</button>
+        </div>
+        <div class="promote-indicator"></div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
