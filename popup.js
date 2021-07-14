@@ -1,14 +1,24 @@
 const saveButton = document.querySelector(".save-button");
+const cancelButton = document.querySelector(".cancel-button");
+
 saveButton.addEventListener("click", handleSave);
+cancelButton.addEventListener("click", handleCancel);
 
 // Check for indicator in storage
 chrome.storage.sync.get(["indicator"], (result) => {
 	let { indicator } = result;
 
-	if (indicator) {
-		updateIndicator(indicator);
-	}
+	updateIndicator(indicator);
 });
+
+function handleSave() {
+	let indicator = document.querySelector("#promote-input").value;
+	updateIndicator(indicator);
+}
+
+function handleCancel() {
+	updateIndicator(null);
+}
 
 function updateIndicator(indicator) {
 	chrome.storage.sync.set({ indicator }, () => {
@@ -20,13 +30,8 @@ function updateIndicator(indicator) {
 		});
 
 		// Update indicator in popup
-		document.querySelector(
-			".promote-indicator"
-		).innerHTML = `Promoting users that start with '<b>${indicator}</b>'`;
+		document.querySelector(".promote-indicator").innerHTML = indicator
+			? `Promoting users that start with '<b>${indicator}</b>'`
+			: "Input a string that indicates which users to promote";
 	});
-}
-
-function handleSave() {
-	let indicator = document.querySelector("#promote-input").value;
-	updateIndicator(indicator);
 }

@@ -10,8 +10,9 @@
         "16": "images/icon_16.png"
     },
     "content_scripts": [{
-        "matches": ["*://*.craniumcafe.com/*/classroom"],
-        "js": ["scripts/promote.js"]
+        "matches": ["*://*.craniumcafe.com/meetings/*"],
+        "js": ["scripts/promote.js"],
+        "all_frames": true
     }],
     "action": {
         "default_icon": "images/icon_16.png",

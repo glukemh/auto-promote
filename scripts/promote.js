@@ -1,4 +1,4 @@
-const iframe = document.getElementById("cafe-frame");
+console.log("Running auto-promote");
 let indicator;
 
 chrome.storage.sync.get(["indicator"], (result) => {
@@ -8,16 +8,14 @@ chrome.storage.sync.get(["indicator"], (result) => {
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 	console.log("received message");
-	if (request.indicator) {
+	if (request.indicator || request.indicator === null) {
 		indicator = request.indicator;
 	}
 });
 
 const promote = () => {
-	const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
 	if (indicator) {
-		iframeDoc.querySelector(`[aria-label^="Promote ${indicator}"]`)?.click();
+		document.querySelector(`[aria-label^="Promote ${indicator}"]`)?.click();
 	}
 
 	window.setTimeout(promote, 1000);
