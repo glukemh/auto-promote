@@ -1,4 +1,4 @@
-console.log("Running auto-promote");
+console.log("Running promote");
 let indicator;
 
 chrome.storage.sync.get(["indicator"], (result) => {
@@ -14,7 +14,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 const promote = () => {
+	// console.log("promoting ", indicator);
 	if (indicator) {
+		// if (document.querySelector(".breakout-room-header")) {
+		// 	document.querySelector(".breakout-room-header").innerHTML = indicator;
+		// }
 		document.querySelector(`[aria-label^="Promote ${indicator}"]`)?.click();
 	}
 

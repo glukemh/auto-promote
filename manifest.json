@@ -13,6 +13,10 @@
         "matches": ["*://*.craniumcafe.com/meetings/*"],
         "js": ["scripts/promote.js"],
         "all_frames": true
+    },{
+        "matches": ["*://*.craniumcafe.com/d/*"],
+        "js": ["scripts/displaySavePDF.js"],
+        "all_frames": true
     }],
     "action": {
         "default_icon": "images/icon_16.png",
