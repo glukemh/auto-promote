@@ -11,3 +11,7 @@ A Google Chrome extension that automatically promotes specified users to moderat
 - Change the prefix indicator in the popup if needed, or cancel to stop automatically promoting.
 
 - The pdf button that is made visible in the toolbar on whiteboards will download all pages of the whiteboard to a pdf.
+
+# Installation
+
+[Chrome Web Store](https://chrome.google.com/webstore/detail/auto-promote/dffgpigggfmlfjlkjdcmccikgpkoejpo)
